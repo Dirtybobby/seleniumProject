@@ -1,15 +1,17 @@
 from selenium.webdriver.common.by import By
+from random import randint
 
 
 class FormPageLocators:
-    FIRST_NAME = browser.find_element("xpath", "//input[@placeholder='First Name']")
-    LAST_NAME = browser.find_element("xpath", "//input[@placeholder='Last Name']")
-    EMAIL = browser.find_element("xpath", "//input[@placeholder='name@example.com']")
-    GENDER = browser.find_element(By.CSS_SELECTOR, "label[for='gender-radio-3']")
-    MOBILE = browser.find_element("xpath", "//input[@placeholder='Mobile Number']")
-    SUBJECT = browser.find_element("xpath", "//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']")
-    HOBBIES = browser.find_element(By.CSS_SELECTOR, "label[for='hobbies-checkbox-3']")
-    UPLOAD_PIC = browser.find_element(By.ID, "uploadPicture")
-    UPLOAD_PIC.send_keys("C:\\Users\\adika\\Downloads\\english_class.txt")
-    CURRENT_ADRESS = browser.find_element("xpath", "//input[@placeholder='Current Address']")
-    SUBMIT =
+    FIRST_NAME = ("xpath", "//input[@placeholder='First Name']")
+    LAST_NAME = ("xpath", "//input[@placeholder='Last Name']")
+    EMAIL = ("xpath", "//input[@placeholder='name@example.com']")
+    GENDER = (By.CSS_SELECTOR, f"label[for='gender-radio-{randint(1, 3)}']")
+    MOBILE = ("xpath", "//input[@placeholder='Mobile Number']")
+    SUBJECT = ("xpath", "//div[@class='subjects-auto-complete__value-container"
+                        "subjects-auto-complete__value-container--is-multi css-1hwfws3']")
+    HOBBIES = (By.CSS_SELECTOR, f"label[for='hobbies-checkbox-{randint(1, 3)}']")
+    UPLOAD_PIC = (By.ID, "uploadPicture")
+    CURRENT_ADDRESS = ("xpath", "//input[@placeholder='Current Address']")
+    SUBMIT = (By.XPATH, "//button[@id='submit']")
+    RESULT_TABLE = (By.XPATH, "//div[@class='table-responsive']//td[2]")
